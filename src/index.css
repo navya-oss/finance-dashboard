@@ -1,3 +1,42 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* 🔥 GLOBAL 3D SUPPORT */
+body {
+  transform-style: preserve-3d;
+  perspective: 1500px;
+  overflow-x: hidden;
+}
+
+/* 🔥 BUTTON STYLE */
+.role-btn {
+  padding: 10px 22px;
+  min-width: 100px;
+  text-align: center;
+  border-radius: 12px;
+  background: linear-gradient(to bottom, #ffffff, #e5e7eb);
+  border: 1px solid #ccc;
+  font-weight: 600; 
+  cursor: pointer;
+  transform: perspective(800px) rotateX(0deg);
+  transition: all 0.2s ease;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.role-btn:hover {
+  transform: perspective(800px) rotateX(10deg) scale(1.02);
+}
+
+.role-btn:active {
+  transform: perspective(800px) rotateX(20deg) scale(0.97);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.role-btn.active {
+  background: linear-gradient(to bottom, #2563eb, #1e40af);
+  color: white;
+}
